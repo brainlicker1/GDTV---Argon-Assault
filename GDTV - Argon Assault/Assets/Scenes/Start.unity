@@ -655,5 +655,4 @@ MonoBehaviour:
       m_Action: Movement
       m_Flags: 8
     m_Flags: 0
-  xDistance: 0.1
-  yDistance: 0.1
+  controlSpeed: 55

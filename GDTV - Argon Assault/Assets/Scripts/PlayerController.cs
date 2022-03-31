@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] InputAction movement;
-    [SerializeField] float xDistance;
-    [SerializeField] float yDistance;
+    
+    [SerializeField] float controlSpeed = 30f;
     void OnEnable() {
         movement.Enable();
     }
@@ -32,8 +32,8 @@ public class PlayerController : MonoBehaviour
             float xThrow = movement.ReadValue<Vector2>().x;
             float yThrow = movement.ReadValue<Vector2>().y;
 
-            float newXPos = transform.localPosition.x + xDistance;
-            float newYPos = transform.localPosition.y + yDistance;
+            float newXPos = xThrow * Time.deltaTime * controlSpeed;
+            float newYPos = yThrow * Time.deltaTime * controlSpeed;
 
             transform.localPosition = new Vector3(newXPos,
             newYPos,transform.localPosition.z);
