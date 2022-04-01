@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] InputAction movement;
+    [SerializeField] float xRange = 5f;
     
     [SerializeField] float controlSpeed = 30f;
     void OnEnable() {
@@ -29,14 +30,16 @@ public class PlayerController : MonoBehaviour
     void UserInput(){
 
 
-            float xThrow = movement.ReadValue<Vector2>().x;
-            float yThrow = movement.ReadValue<Vector2>().y;
+            float xThrow = Input.GetAxis("Horizontal");
+            float yThrow = Input.GetAxis("Vertical");
+            float rawXPos = xThrow * Time.deltaTime * controlSpeed;
+            float rawYPos = yThrow * Time.deltaTime * controlSpeed;
 
-            float newXPos = xThrow * Time.deltaTime * controlSpeed;
-            float newYPos = yThrow * Time.deltaTime * controlSpeed;
+            float clampedXpos = Mathf.Clamp(rawXPos,-xRange,xRange);
+            float clampedYPos = Mathf.Clamp(rawYPos, -xRange, xRange);
 
-            transform.localPosition = new Vector3(newXPos,
-            newYPos,transform.localPosition.z);
+            transform.localPosition = new Vector3(clampedXpos,
+            clampedYPos,transform.localPosition.z);
 
     }
 
