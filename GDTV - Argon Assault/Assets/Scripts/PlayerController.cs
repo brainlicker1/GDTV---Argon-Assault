@@ -24,9 +24,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UserInput();
+        ProcessRotation();
     }
 
-    
+    void ProcessRotation(){
+
+
+        transform.localRotation = Quaternion.Euler(-30f,30f,0f);
+
+    }
     void UserInput(){
 
 
