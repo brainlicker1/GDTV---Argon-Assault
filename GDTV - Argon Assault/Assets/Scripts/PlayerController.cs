@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         UserInput();
         ProcessRotation();
+        ProcessFiring();
     }
 
     void ProcessRotation(){
@@ -64,5 +65,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    void ProcessFiring()   {
 
+        if(Input.GetButton("Fire1")) {
+            Debug.Log("Bang");
+        } else { Debug.Log("No Bang");}
+
+    }
 }
