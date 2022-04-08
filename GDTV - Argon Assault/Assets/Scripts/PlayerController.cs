@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float positionYawFactor = -2f;
     [SerializeField] float controlRollFactor = -3;
 
+    [SerializeField] GameObject[] lazers;
     float yThrow;
     float xThrow;
      
@@ -68,8 +69,24 @@ public class PlayerController : MonoBehaviour
     void ProcessFiring()   {
 
         if(Input.GetButton("Fire1")) {
-            Debug.Log("Bang");
-        } else { Debug.Log("No Bang");}
+            ActivateLazers();
+        } else {
+             DeactivateLazers();}
 
+    }
+    void ActivateLazers(){
+
+        foreach (GameObject lazer in lazers)
+        {
+            lazer.SetActive(true);
+        }
+
+    }
+    void DeactivateLazers(){
+
+        foreach (GameObject lazer in lazers)
+        {
+            lazer.SetActive(false);
+        }
     }
 }
