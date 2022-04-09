@@ -18,18 +18,19 @@ public class PlayerController : MonoBehaviour
     float yThrow;
     float xThrow;
      
-    void OnEnable() {
-        movement.Enable();
-    }
+    // void OnEnable() {
+    //     movement.Enable();
+    // }
     
-     void OnDisable() {
-        movement.Disable();
-    }
+    //  void OnDisable() {
+    //     movement.Disable();
+    // }
     
         
     
     void Start()
     {
+
         
     }
 
@@ -69,24 +70,19 @@ public class PlayerController : MonoBehaviour
     void ProcessFiring()   {
 
         if(Input.GetButton("Fire1")) {
-            ActivateLazers();
+            SetLazersActive(true);
         } else {
-             DeactivateLazers();}
-
+             SetLazersActive(false);
     }
-    void ActivateLazers(){
+  void  SetLazersActive(bool isActive){
 
         foreach (GameObject lazer in lazers)
-        {
-            lazer.SetActive(true);
+        {   var emmissionModule = lazer.GetComponent<ParticleSystem>().emission;
+            emmissionModule.enabled = isActive;
+           // lazer.SetActive(true);
         }
 
     }
-    void DeactivateLazers(){
-
-        foreach (GameObject lazer in lazers)
-        {
-            lazer.SetActive(false);
-        }
+   
     }
 }
