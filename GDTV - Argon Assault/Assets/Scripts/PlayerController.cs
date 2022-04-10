@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
-{
+{   
+    [Header("General Setup")]
     [SerializeField] InputAction movement;
     [SerializeField] float xRange = 5f;
     
+    [Tooltip("X/Y Axis controls")]
     [SerializeField] float controlSpeed = 30f;
     [SerializeField] float pitchFactor = -2f;
     [SerializeField] float controlPitchFactor = -15f;

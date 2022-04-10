@@ -603,6 +603,10 @@ PrefabInstance:
       value: Player Rig
       objectReference: {fileID: 0}
     - target: {fileID: 3556295926707533207, guid: 959011c6c6bf4194d80ecc139b03300f, type: 3}
+      propertyPath: xRange
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3556295926707533207, guid: 959011c6c6bf4194d80ecc139b03300f, type: 3}
       propertyPath: lazers.Array.size
       value: 2
       objectReference: {fileID: 0}
