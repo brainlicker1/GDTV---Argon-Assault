@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2872996127537703840}
   - component: {fileID: 2872996127537703843}
   - component: {fileID: 2872996127537703842}
+  - component: {fileID: 2872996128561528329}
+  - component: {fileID: 2872996128561528328}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -116,6 +118,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &2872996128561528329
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2872996127537703845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2872996128561528328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2872996127537703845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b4a4b8eaa7edfb41a0ffb3555c25533, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathVfx: {fileID: 0}
 --- !u!1001 &2872996127881087082
 PrefabInstance:
   m_ObjectHideFlags: 0
