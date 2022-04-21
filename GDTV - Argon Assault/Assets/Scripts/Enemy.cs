@@ -11,11 +11,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] int enemyHitpoints = 2;
     // Start is called before the first frame update
 
-    void Start() {
-     scoreScript = FindObjectOfType<ScoreScript>();
-
+    void Start()
+    {
+        scoreScript = FindObjectOfType<ScoreScript>();
+        RBadd();
     }
-     void OnParticleCollision(GameObject other) {
+
+    void RBadd()
+    {
+        Rigidbody rb = gameObject.AddComponent<Rigidbody>();
+        rb.useGravity = false;
+    }
+
+    void OnParticleCollision(GameObject other) {
 
          
          ScoreIncrease();
