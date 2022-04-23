@@ -5,8 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {       
     ScoreScript scoreScript;
+    GameObject spawnPoint;
     [SerializeField] GameObject deathVfx;
-    [SerializeField] Transform parent;
+     
     [SerializeField] int enemyScoreValue = 500;
     [SerializeField] int enemyHitpoints = 2;
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         scoreScript = FindObjectOfType<ScoreScript>();
+        spawnPoint = GameObject.FindWithTag("Spawner");
         RBadd();
     }
 
@@ -30,7 +32,7 @@ public class Enemy : MonoBehaviour
          if(enemyHitpoints <= 0) {
 
               GameObject vfx = Instantiate(deathVfx,transform.position, Quaternion.identity);
-        vfx.transform.parent = parent;
+        vfx.transform.parent = spawnPoint.transform;
         Destroy(gameObject);
          }
        
